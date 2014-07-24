@@ -14,7 +14,7 @@ public class Runner extends PApplet {
 	Terrain terrain;
 	public void setup()
 	{
-		terrain = new Terrain(32,32,870);
+		terrain = new Terrain(16,16,870);
 		size(1280,720);
 		background(0);
 		noStroke();

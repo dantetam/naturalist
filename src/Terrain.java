@@ -6,7 +6,7 @@ public class Terrain {
 	public double[][] terrain;
 	public Random random;
 	
-	public Terrain(int rows, int cols)
+	/*public Terrain(int rows, int cols)
 	{
 		random = new Random(System.currentTimeMillis());
 		double[][] temp = scaledTables(32,32,0.75,100,5);
@@ -15,7 +15,7 @@ public class Terrain {
 		printTable(iNoise(temp,2));
 		//printTable();
 		terrain = posTable(iNoise(temp,2));
-	}
+	}*/
 
 	public Terrain(int rows, int cols, double seed)
 	{
@@ -23,9 +23,9 @@ public class Terrain {
 		double[][] temp = scaledTables(32,32,0.75,100,5);
 		printTable(temp);
 		System.out.println("--------------------");
-		printTable(iNoise(temp,2));
+		printTable(iNoise(temp,4));
 		//printTable();
-		terrain = posTable(iNoise(temp,2));
+		terrain = posTable(iNoise(temp,4));
 	}
 	
 	/** Prints a table
