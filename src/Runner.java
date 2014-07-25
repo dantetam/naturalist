@@ -14,7 +14,7 @@ public class Runner extends PApplet {
 	Terrain terrain;
 	public void setup()
 	{
-		terrain = new Terrain(16,16,870);
+		terrain = new Terrain(32,32,870);
 		size(1280,720);
 		background(0);
 		noStroke();
@@ -27,7 +27,7 @@ public class Runner extends PApplet {
 		{
 			for (double c = 0; c < terrain.terrain[0].length; c++)
 			{
-				fill((int)(terrain.terrain[(int)r][(int)c]*20));
+				fill((int)(terrain.terrain[(int)r][(int)c]*25));
 				rect((int)(r/terrain.terrain.length*width),
 						(int)(c/terrain.terrain[0].length*height),
 						width/terrain.terrain.length + 1,

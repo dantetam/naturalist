@@ -20,7 +20,7 @@ public class Terrain {
 	public Terrain(int rows, int cols, double seed)
 	{
 		random = new Random((long)seed);
-		double[][] temp = scaledTables(32,32,0.75,100,5);
+		double[][] temp = scaledTables(rows,cols,0.75,100,(int)(Math.log(rows)/Math.log(2)));
 		printTable(temp);
 		System.out.println("--------------------");
 		printTable(iNoise(temp,4));
