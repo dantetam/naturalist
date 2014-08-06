@@ -20,12 +20,12 @@ public class Terrain {
 	public Terrain(int rows, int cols, double seed)
 	{
 		random = new Random((long)seed);
-		double[][] temp = scaledTables(rows,cols,0.75,100,(int)(Math.log(rows)/Math.log(2)));
+		double[][] temp = scaledTables(rows,cols,1,100,(int)(Math.log(rows)/Math.log(2)));
 		printTable(temp);
 		System.out.println("--------------------");
-		printTable(iNoise(temp,4));
+		printTable(iNoise(temp,2));
 		//printTable();
-		terrain = posTable(iNoise(temp,4));
+		terrain = posTable(iNoise(temp,2));
 	}
 	
 	/** Prints a table
@@ -137,6 +137,22 @@ public class Terrain {
 			}
 		}
 		return temp;
+	}
+	
+	/**
+	 * Returns maximum value found in table
+	 */
+	public double max()
+	{
+		double max = 0;
+		for (int r = 0; r < terrain.length; r++)
+		{
+			for (int c = 0; c < terrain[0].length; c++)
+			{
+				if (terrain[r][c] > max) max = terrain[r][c];
+			}
+		}
+		return max;
 	}
 	
 	public class CubicInterpolator {

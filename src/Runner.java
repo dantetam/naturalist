@@ -18,8 +18,10 @@ public class Runner extends PApplet {
 		size(1280,720);
 		background(0);
 		noStroke();
+		max = terrain.max();
 	}
 	
+	private double max = 0;
 	public void draw()
 	{
 		background(0);
@@ -27,7 +29,7 @@ public class Runner extends PApplet {
 		{
 			for (double c = 0; c < terrain.terrain[0].length; c++)
 			{
-				fill((int)(terrain.terrain[(int)r][(int)c]*25));
+				fill((int)(terrain.terrain[(int)r][(int)c]*(255/max)));
 				rect((int)(r/terrain.terrain.length*width),
 						(int)(c/terrain.terrain[0].length*height),
 						width/terrain.terrain.length + 1,
